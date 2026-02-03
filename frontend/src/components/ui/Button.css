@@ -43,15 +43,15 @@
 
 /* Variants */
 .btn-primary {
-    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+    background: var(--grad-premium);
     color: white;
-    box-shadow: 0 2px 4px rgba(107, 33, 168, 0.3);
+    box-shadow: 0 4px 14px rgba(124, 58, 237, 0.3);
 }
 
 .btn-primary:hover:not(:disabled) {
-    background: linear-gradient(135deg, var(--color-primary-light) 0%, var(--color-primary) 100%);
-    box-shadow: 0 4px 8px rgba(107, 33, 168, 0.4);
-    transform: translateY(-1px);
+    box-shadow: 0 6px 20px rgba(124, 58, 237, 0.4);
+    transform: translateY(-2px);
+    filter: brightness(1.1);
 }
 
 .btn-primary:active:not(:disabled) {

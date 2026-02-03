@@ -6,6 +6,7 @@ import { z } from 'zod';
 import { Mail, Lock, Eye, EyeOff } from 'lucide-react';
 import { Button, Input } from '../components/ui';
 import { useAuthStore } from '../stores/authStore';
+import logo from '../assets/logo-premium.png';
 import './Auth.css';
 
 const loginSchema = z.object({
@@ -47,32 +48,23 @@ export const LoginPage: React.FC = () => {
                 <div className="auth-branding">
                     <div className="auth-branding-content">
                         <div className="auth-logo">
-                            <svg viewBox="0 0 60 60" fill="none">
-                                <rect width="60" height="60" rx="16" fill="url(#auth-logo-gradient)" />
-                                <path d="M18 30L27 39L42 21" stroke="white" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
-                                <defs>
-                                    <linearGradient id="auth-logo-gradient" x1="0" y1="0" x2="60" y2="60" gradientUnits="userSpaceOnUse">
-                                        <stop stopColor="#A855F7" />
-                                        <stop offset="1" stopColor="#6B21A8" />
-                                    </linearGradient>
-                                </defs>
-                            </svg>
+                            <img src={logo} alt="Dash" className="premium-logo-glow" style={{ width: '120px', height: 'auto', marginBottom: 'var(--space-8)' }} />
                         </div>
-                        <h1 className="auth-brand-title">Disbursify Dash</h1>
-                        <p className="auth-brand-tagline">One Dashboard. All Your Businesses.</p>
+                        <h1 className="auth-brand-title">Dash</h1>
+                        <p className="auth-brand-tagline">The future of portfolio entrepreneurship.</p>
 
                         <div className="auth-features">
-                            <div className="auth-feature">
-                                <span className="auth-feature-icon">📊</span>
-                                <span>Track all your businesses in one place</span>
+                            <div className="auth-feature-premium">
+                                <div className="feature-dot"></div>
+                                <span>Real-time Financial Intelligence</span>
                             </div>
-                            <div className="auth-feature">
-                                <span className="auth-feature-icon">🔒</span>
-                                <span>Bank-grade security with encryption</span>
+                            <div className="auth-feature-premium">
+                                <div className="feature-dot"></div>
+                                <span>Multi-Business Unified Control</span>
                             </div>
-                            <div className="auth-feature">
-                                <span className="auth-feature-icon">⚡</span>
-                                <span>Real-time financial insights</span>
+                            <div className="auth-feature-premium">
+                                <div className="feature-dot"></div>
+                                <span>Institutional-Grade Security</span>
                             </div>
                         </div>
                     </div>

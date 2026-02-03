@@ -6,6 +6,7 @@ import { z } from 'zod';
 import { Mail, Lock, Eye, EyeOff, User, Phone } from 'lucide-react';
 import { Button, Input } from '../components/ui';
 import { useAuthStore } from '../stores/authStore';
+import logo from '../assets/logo-premium.png';
 import './Auth.css';
 
 const registerSchema = z.object({
@@ -60,28 +61,19 @@ export const RegisterPage: React.FC = () => {
                 <div className="auth-branding">
                     <div className="auth-branding-content">
                         <div className="auth-logo">
-                            <svg viewBox="0 0 60 60" fill="none">
-                                <rect width="60" height="60" rx="16" fill="url(#auth-logo-gradient)" />
-                                <path d="M18 30L27 39L42 21" stroke="white" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
-                                <defs>
-                                    <linearGradient id="auth-logo-gradient" x1="0" y1="0" x2="60" y2="60" gradientUnits="userSpaceOnUse">
-                                        <stop stopColor="#A855F7" />
-                                        <stop offset="1" stopColor="#6B21A8" />
-                                    </linearGradient>
-                                </defs>
-                            </svg>
+                            <img src={logo} alt="Dash" className="premium-logo-glow" style={{ width: '120px', height: 'auto', marginBottom: 'var(--space-8)' }} />
                         </div>
-                        <h1 className="auth-brand-title">Disbursify Dash</h1>
-                        <p className="auth-brand-tagline">One Dashboard. All Your Businesses.</p>
+                        <h1 className="auth-brand-title">Dash</h1>
+                        <p className="auth-brand-tagline">Scale your empire with clarity.</p>
 
-                        <div className="auth-stats">
-                            <div className="auth-stat">
-                                <span className="auth-stat-value">10,000+</span>
-                                <span className="auth-stat-label">Businesses Managed</span>
+                        <div className="auth-stats-premium">
+                            <div className="auth-stat-v2">
+                                <span className="stat-label-v2">Financial Snapshot</span>
+                                <span className="stat-value-v2">30 Seconds</span>
                             </div>
-                            <div className="auth-stat">
-                                <span className="auth-stat-value">₦50B+</span>
-                                <span className="auth-stat-label">Transactions Tracked</span>
+                            <div className="auth-stat-v2">
+                                <span className="stat-label-v2">Enterprise Trust</span>
+                                <span className="stat-value-v2">10,000+ Teams</span>
                             </div>
                         </div>
                     </div>

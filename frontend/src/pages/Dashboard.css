@@ -1,22 +1,30 @@
 .dashboard {
     max-width: 1400px;
     margin: 0 auto;
+    padding: var(--space-4);
 }
 
 .dashboard-header {
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
-    margin-bottom: var(--space-8);
+    align-items: flex-end;
+    margin-bottom: var(--space-10);
 }
 
 .dashboard-header h1 {
-    font-size: var(--text-3xl);
+    font-size: 3rem;
+    font-weight: 800;
+    letter-spacing: -0.04em;
+    background: var(--grad-premium);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
     margin-bottom: var(--space-1);
 }
 
 .dashboard-header p {
     color: var(--color-text-muted);
+    font-size: 1.1rem;
 }
 
 /* Stats Grid */
@@ -42,34 +50,54 @@
 .stat-card {
     position: relative;
     overflow: hidden;
+    background: var(--color-bg-card);
+    border: 1px solid var(--color-border);
+    backdrop-filter: blur(12px);
+    transition: all var(--transition-base);
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--color-primary-glow);
+    box-shadow: 0 10px 30px rgba(0, 242, 255, 0.05);
 }
 
 .stat-card .card-content {
     display: flex;
     align-items: flex-start;
-    gap: var(--space-4);
+    gap: var(--space-5);
+    padding: var(--space-6);
 }
 
 .stat-card-primary {
-    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+    background: var(--grad-premium);
     border: none;
+    box-shadow: 0 10px 20px var(--color-primary-glow);
 }
 
 .stat-card-primary .stat-label,
 .stat-card-primary .stat-value,
 .stat-card-primary .stat-change {
-    color: white;
+    color: var(--color-bg);
 }
 
 .stat-icon {
-    width: 48px;
-    height: 48px;
-    border-radius: var(--radius-xl);
-    background: rgba(107, 33, 168, 0.1);
+    width: 56px;
+    height: 56px;
+    border-radius: var(--radius-lg);
+    background: rgba(255, 255, 255, 0.03);
     display: flex;
     align-items: center;
     justify-content: center;
     color: var(--color-primary);
+    border: 1px solid var(--color-border);
+    box-shadow: var(--shadow-sm);
+}
+
+.stat-card-primary .stat-icon {
+    background: rgba(0, 0, 0, 0.1);
+    color: var(--color-bg);
+    border: none;
 }
 
 .stat-card-primary .stat-icon {
@@ -93,8 +121,9 @@
 }
 
 .stat-icon svg {
-    width: 24px;
-    height: 24px;
+    width: 28px;
+    height: 28px;
+    filter: drop-shadow(0 0 5px currentColor);
 }
 
 .stat-content {
@@ -103,23 +132,28 @@
 }
 
 .stat-label {
-    font-size: var(--text-sm);
+    font-size: 0.875rem;
+    font-weight: 500;
     color: var(--color-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
     margin-bottom: var(--space-1);
 }
 
 .stat-value {
-    font-size: var(--text-2xl);
-    font-weight: 700;
-    color: var(--color-text);
+    font-size: 2.25rem;
+    font-weight: 800;
+    color: white;
     font-variant-numeric: tabular-nums;
+    letter-spacing: -0.02em;
 }
 
 .stat-change {
     display: flex;
     align-items: center;
     gap: var(--space-1);
-    font-size: var(--text-sm);
+    font-size: 0.875rem;
+    font-weight: 600;
     margin-top: var(--space-2);
 }
 
@@ -129,17 +163,6 @@
 
 .stat-change.negative {
     color: var(--color-error);
-}
-
-.stat-change svg {
-    width: 14px;
-    height: 14px;
-}
-
-.stat-subtext {
-    font-size: var(--text-sm);
-    color: var(--color-text-muted);
-    margin-top: var(--space-1);
 }
 
 /* Dashboard Grid */
@@ -160,67 +183,57 @@
 }
 
 /* Business List */
-.business-list {
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-3);
-}
-
 .business-item {
     display: flex;
     align-items: center;
-    gap: var(--space-3);
-    padding: var(--space-3);
+    gap: var(--space-4);
+    padding: var(--space-4);
     border-radius: var(--radius-lg);
-    transition: background var(--transition-fast);
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid transparent;
+    transition: all var(--transition-base);
+    margin-bottom: var(--space-3);
 }
 
 .business-item:hover {
-    background: var(--color-bg);
+    background: rgba(255, 255, 255, 0.04);
+    border-color: var(--color-border);
+    transform: scale(1.01);
 }
 
 .business-avatar {
-    width: 44px;
-    height: 44px;
-    border-radius: var(--radius-lg);
+    width: 48px;
+    height: 48px;
+    border-radius: var(--radius-md);
     display: flex;
     align-items: center;
     justify-content: center;
-    font-weight: 600;
-    font-size: var(--text-lg);
+    font-weight: 800;
+    font-size: 1.25rem;
     color: white;
+    background: var(--grad-obsidian);
+    border: 1px solid var(--color-border);
 }
 
 .business-info {
     flex: 1;
-    display: flex;
-    flex-direction: column;
 }
 
 .business-name {
-    font-weight: 500;
-    color: var(--color-text);
+    font-weight: 600;
+    color: white;
+    font-size: 1rem;
 }
 
 .business-industry {
-    font-size: var(--text-sm);
+    font-size: 0.8125rem;
     color: var(--color-text-muted);
-}
-
-.business-balance {
-    text-align: right;
-    display: flex;
-    flex-direction: column;
 }
 
 .balance-amount {
-    font-weight: 600;
-    font-variant-numeric: tabular-nums;
-}
-
-.balance-label {
-    font-size: var(--text-xs);
-    color: var(--color-text-muted);
+    font-weight: 700;
+    font-size: 1rem;
+    color: white;
 }
 
 /* Transaction List */

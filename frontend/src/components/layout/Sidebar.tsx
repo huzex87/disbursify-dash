@@ -12,6 +12,7 @@ import {
     Users
 } from 'lucide-react';
 import { useAuthStore } from '../../stores/authStore';
+import logo from '../../assets/logo-premium.png';
 import './Sidebar.css';
 
 interface SidebarProps {
@@ -43,21 +44,11 @@ export const Sidebar: React.FC<SidebarProps> = ({ isCollapsed, onToggle }) => {
             <div className="sidebar-header">
                 <div className="sidebar-logo">
                     <div className="logo-icon">
-                        <svg viewBox="0 0 40 40" fill="none">
-                            <rect width="40" height="40" rx="10" fill="url(#logo-gradient)" />
-                            <path d="M12 20L18 26L28 14" stroke="white" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
-                            <defs>
-                                <linearGradient id="logo-gradient" x1="0" y1="0" x2="40" y2="40" gradientUnits="userSpaceOnUse">
-                                    <stop stopColor="#A855F7" />
-                                    <stop offset="1" stopColor="#6B21A8" />
-                                </linearGradient>
-                            </defs>
-                        </svg>
+                        <img src={logo} alt="Logo" style={{ width: isCollapsed ? '32px' : '40px', transition: 'width 0.3s' }} />
                     </div>
                     {!isCollapsed && (
                         <div className="logo-text">
-                            <span className="logo-name">Disbursify</span>
-                            <span className="logo-tagline">Dash</span>
+                            <span className="logo-brand">Dash</span>
                         </div>
                     )}
                 </div>
